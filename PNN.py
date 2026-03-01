@@ -74,6 +74,6 @@ for epoch in range(num_epochs):
     print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}')
 
 #save model using pickle
-file = open('MODEL_.pkl', 'wb')
+file = open('NN.pkl', 'wb')
 pickle.dump(model, file)
 file.close()

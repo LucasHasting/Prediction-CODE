@@ -45,15 +45,15 @@ knn = KNeighborsClassifier(n_neighbors=10,metric='euclidean') # Initialize the c
 knn.fit(X_train, y_train) # Train the classifier
 
 #save models
-file = open('Model_.pkl', 'wb')
+file = open('DT.pkl', 'wb')
 pickle.dump(clf, file)
 file.close()
 
-file = open('Model_.pkl', 'wb')
+file = open('RF.pkl', 'wb')
 pickle.dump(rf, file)
 file.close()
 
-file = open('Model_.pkl', 'wb')
+file = open('KNN.pkl', 'wb')
 pickle.dump(knn, file)
 file.close()
 
