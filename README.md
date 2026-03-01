@@ -25,4 +25,5 @@ The neural network is trained using backpropagation and optomized using stocasti
 
 ## Sources for Rational
 (1) https://builtin.com/machine-learning/common-loss-functions
+
 (2) https://www.deeplearningbook.org/contents/mlp.html
