@@ -2,8 +2,9 @@
 
 Note: Random Forest Classifier is involved with randomness and will most likely give a different model when replicating results.
 
-| *.pkl                        | Model/data binary files.                                     |
+| File                         | Description                                                  |
 |------------------------------|--------------------------------------------------------------|
+| *.pkl                        | Model/data binary files.                                     |
 | ensembl-export-serpina1.xlsx | The full dataset.                                            |
 | predictions_VUS.csv          | The dataset containing predictions for VUS using each model. |
 | readFile.py                  | Cleans the full dataset and generates data *.pkl files.      |
