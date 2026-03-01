@@ -25,7 +25,7 @@ df = pickle.load(file)
 file.close()
 
 #get variables used for prediction
-df = df[df["Clin. Sig."] != "VUS"]
+df = df[df["Clin. Sig."] == "VUS"]
 X = df[["SIFT", "PolyPhen", "REVEL", "MetaLR", "Mutation Assessor"]]
 
 #load the models
