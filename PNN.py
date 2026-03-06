@@ -24,7 +24,7 @@ class PathogenicityNN(nn.Module):
         return x
 
 #load data frame using pickle
-file = open('DATA.pkl', 'rb')
+file = open('DATA_CLEANED.pkl', 'rb')
 df = pickle.load(file)
 file.close()
 
