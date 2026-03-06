@@ -26,16 +26,16 @@ import pickle
 class PathogenicityNN(nn.Module):
     def __init__(self):
         super(PathogenicityNN, self).__init__()
-        # Define the layers
-        self.fc1 = nn.Linear(5, 3)  # Input Layer -> Hidden Layer
-        self.fc2 = nn.Linear(3, 1) # Hidden Layer -> Output layer
+        #define the layers
+        self.fc1 = nn.Linear(5, 3) #input Layer  -> hidden Layer
+        self.fc2 = nn.Linear(3, 1) #hidden Layer -> output layer
 
     def forward(self, x):
-        # Define the forward pass with a ReLU activation function
+        #define the forward pass activation function -> ReLU 
         x = F.relu(self.fc1(x))
         x = self.fc2(x)
 
-        #apply the activation function
+        #apply the output layer activation function -> sigmoid
         x = F.sigmoid(x)
         return x
 
@@ -47,7 +47,7 @@ df = df[df["Clin. Sig."] != "VUS"]
 
 X = torch.tensor(df[["SIFT", "PolyPhen", "REVEL", "MetaLR", "Mutation Assessor"]].values, dtype=torch.float32)
 
-# Load the models
+#load the models
 file = open('NN.pkl', 'rb')
 nn_model = pickle.load(file)
 file.close()
@@ -64,7 +64,7 @@ file = open('KNN.pkl', 'rb')
 knn = pickle.load(file)
 file.close()
 
-#Test NN
+#test NN
 X_test = df[["SIFT", "PolyPhen", "REVEL", "MetaLR", "Mutation Assessor"]]
 y_test = df["Clin. Sig."].map({"pathogenic": 1, "benign": 0})
 

@@ -55,7 +55,7 @@ while(abs(train_accuracy - test_accuracy) > GG_THRESHOLD or param == 0):
 
 print(f"Best max_depth: {param+1}\n")
 
-#Find best parameter: n_estimators
+#find best parameter: n_estimators
 train_accuracy = 1
 test_accuracy = 0
 old_param = param
