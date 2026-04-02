@@ -16,6 +16,7 @@ Note: Some models will be difficult to replicate due to the randomness involved.
 | models_test.py                      | Tests all models and shows a CM for each model.               |
 | classify.py                         | Generates predictions_VUS.csv.                                |
 | poster.pdf                          | The poster used to present the project.                       |
+| poster.zip                          | The source for poster.pdf.                                    |
 
 ## Rational for NN, Decision Tree/Random Forest, K-NN
 Since we are using binary classification, a sigmoid activation function is used on the output layer.
