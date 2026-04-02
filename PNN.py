@@ -94,7 +94,7 @@ for epoch in range(num_epochs):
 
 '''
 Use this to check an already existing NN Generalization Gap:
-file = open('NN.pkl', 'rb')
+file = open('models/NN.pkl', 'rb')
 model = pickle.load(file)
 file.close()
 '''
