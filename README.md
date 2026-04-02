@@ -26,6 +26,8 @@ The loss function used is log loss, this is done since we are doing binary class
 
 The neural network is trained using backpropagation and optomized using stocastic gradient descent.
 
+Anything else with the NN was chosen through experimentation.
+
 Gini is used for the decision tree/random forest since we are using binary classification (easier to interpret).
 
 Euclidean Distance is used for K-NN since all variables are normalized.
