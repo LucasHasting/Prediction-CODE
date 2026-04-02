@@ -1,8 +1,19 @@
+'''
+Name: Lucas Hasting
+Description: Check the parameters of our MLP
+Course: MA 395 - Deep Learning Independent Study/MA 360H - CODE
+Instructors: Mark Terwilliger, Cynthia Stenger
+Github: https://github.com/LucasHasting/Prediction-CODE
+* Sources are included in the GitHub ReadME
+'''
+
+#import libraries used
 import torch
 from torch import nn
 import torch.nn.functional as F
 import pickle
 
+#definition of the MLP
 class PathogenicityNN(nn.Module):
     def __init__(self):
         super(PathogenicityNN, self).__init__()
@@ -19,11 +30,12 @@ class PathogenicityNN(nn.Module):
         x = F.sigmoid(x)
         return x
 
-#load the model
-file = open('NN.pkl', 'rb')
+# Load the model
+file = open('models/NN.pkl', 'rb')
 model = pickle.load(file)
 file.close()
 
+#check parameters
 for name, param in model.named_parameters():
     print(name, param.shape)
 

@@ -1,7 +1,12 @@
-#Name:          Lucas Hasting
-#Description:   Use machine learning to predict pathogenicty
-#               -> train models (NN is in a separate file)
-#               https://scikit-learn.org/stable/api/index.html
+'''
+Name: Lucas Hasting
+Description: Construct models to predict pathogenicity using
+             a Decision Tree, Random Forest, KNN
+Course: MA 395 - Deep Learning Independent Study/MA 360H - CODE
+Instructors: Mark Terwilliger, Cynthia Stenger
+Github: https://github.com/LucasHasting/Prediction-CODE
+* Sources are included in the GitHub ReadME
+'''
 
 #include data wrangling library
 import pandas as pd
@@ -16,7 +21,7 @@ from sklearn.model_selection import train_test_split
 import pickle
 
 #get data from file
-file = open('DATA_CLEANED.pkl', 'rb')
+file = open('data/DATA_CLEANED.pkl', 'rb')
 df = pickle.load(file)
 file.close()
 
@@ -45,15 +50,15 @@ knn = KNeighborsClassifier(n_neighbors=10,metric='euclidean') # Initialize the c
 knn.fit(X_train, y_train) # Train the classifier
 
 #save models
-file = open('DT.pkl', 'wb')
+file = open('models/DT.pkl', 'wb')
 pickle.dump(clf, file)
 file.close()
 
-file = open('RF.pkl', 'wb')
+file = open('models/RM.pkl', 'wb')
 pickle.dump(rf, file)
 file.close()
 
-file = open('KNN.pkl', 'wb')
+file = open('models/KNN.pkl', 'wb')
 pickle.dump(knn, file)
 file.close()
 

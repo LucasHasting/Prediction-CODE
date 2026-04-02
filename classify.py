@@ -1,8 +1,19 @@
+'''
+Name: Lucas Hasting
+Description: Predict pathogenicity in VUS
+Course: MA 395 - Deep Learning Independent Study/MA 360H - CODE
+Instructors: Mark Terwilliger, Cynthia Stenger
+Github: https://github.com/LucasHasting/Prediction-CODE
+* Sources are included in the GitHub ReadME
+'''
+
+#import libraries used
 import torch
 from torch import nn
 import torch.nn.functional as F
 import pickle
 
+#definition of the MLP
 class PathogenicityNN(nn.Module):
     def __init__(self):
         super(PathogenicityNN, self).__init__()
@@ -20,7 +31,7 @@ class PathogenicityNN(nn.Module):
         return x
 
 #load data frame using pickle
-file = open('DATA_CLEANED_FULL.pkl', 'rb')
+file = open('data/DATA_CLEANED_FULL.pkl', 'rb')
 df = pickle.load(file)
 file.close()
 
@@ -29,19 +40,19 @@ df = df[df["Clin. Sig."] == "VUS"]
 X = df[["SIFT", "PolyPhen", "REVEL", "MetaLR", "Mutation Assessor"]]
 
 #load the models
-file = open('NN.pkl', 'rb')
+file = open('models/NN.pkl', 'rb')
 nn_model = pickle.load(file)
 file.close()
 
-file = open('DT.pkl', 'rb')
+file = open('models/DT.pkl', 'rb')
 dt = pickle.load(file)
 file.close()
 
-file = open('RF.pkl', 'rb')
+file = open('models/RF.pkl', 'rb')
 rf = pickle.load(file)
 file.close()
 
-file = open('KNN.pkl', 'rb')
+file = open('models/KNN.pkl', 'rb')
 knn = pickle.load(file)
 file.close()
 
@@ -52,5 +63,5 @@ df["RM"] = rf.predict(X)
 df["KNN"] = knn.predict(X)
 
 #store updated VUS file with predictions
-df.to_csv('predictions_VUS.csv', index=False)
+df.to_csv('data/predictions_VUS.csv', index=False)
 print("Done")

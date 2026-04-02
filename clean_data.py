@@ -1,9 +1,19 @@
+'''
+Name: Lucas Hasting
+Description: Construct a MLP to predict pathogenicity
+Course: MA 395 - Deep Learning Independent Study/MA 360H - CODE
+Instructors: Mark Terwilliger, Cynthia Stenger
+Github: https://github.com/LucasHasting/Prediction-CODE
+* Sources are included in the GitHub ReadME
+'''
+
+#import libraries used
 import pandas as pd
 import matplotlib.pyplot as plt
 import pickle
 
 #reads file, sheet at index = 0
-df = pd.read_excel("ensembl-export-serpina1.xlsx", sheet_name=0)
+df = pd.read_excel("data/ensembl-export-serpina1.xlsx", sheet_name=0)
 
 #replace all Clin. Sig. with uncertain significance with VUS
 df["Clin. Sig."] = df["Clin. Sig."].mask(
@@ -44,11 +54,11 @@ rows = df[df["Clin. Sig."] == "benign"].sample(n=196, random_state=42).index
 df2 = df.drop(rows)
 
 #save data frame of full sample and dropped sample using pickle
-file = open('DATA_CLEANED.pkl', 'wb')
+file = open('data/DATA_CLEANED.pkl', 'wb')
 pickle.dump(df2, file)
 file.close()
 
-file = open('DATA_CLEANED_FULL.pkl', 'wb')
+file = open('data/DATA_CLEANED_FULL.pkl', 'wb')
 pickle.dump(df, file)
 file.close()
 

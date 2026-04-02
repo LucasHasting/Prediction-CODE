@@ -1,8 +1,12 @@
-#Name:          Lucas Hasting, Joseph Pope
-#Description:   Use machine learning to predict pathogenicty
-#               -> Parameter Search for models.py
-#               https://scikit-learn.org/stable/api/index.html
-#               https://mlbenchmarks.org/04-holdout-method.html
+'''
+Name: Lucas Hasting
+Description: Find parameters to predict pathogenicity using
+             a Decision Tree, Random Forest, KNN
+Course: MA 395 - Deep Learning Independent Study/MA 360H - CODE
+Instructors: Mark Terwilliger, Cynthia Stenger
+Github: https://github.com/LucasHasting/Prediction-CODE
+* Sources are included in the GitHub ReadME
+'''
 
 #include data wrangling library
 import pandas as pd
@@ -21,7 +25,7 @@ import pickle
 GG_THRESHOLD = 0.015
 
 #get data from csv
-file = open('DATA_CLEANED.pkl', 'rb')
+file = open('data/DATA_CLEANED.pkl', 'rb')
 df = pickle.load(file)
 file.close()
 
@@ -34,16 +38,16 @@ X = df[["SIFT", "PolyPhen", "REVEL", "MetaLR", "Mutation Assessor"]]
 #split data into test/training (1/3 - test, 2/3 - training)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
-#Find best parameter: max_depth
+#find best parameter: max_depth
 train_accuracy = 1
 test_accuracy = 0
 param = 100 #good starting point
 
 while(abs(train_accuracy - test_accuracy) > GG_THRESHOLD or param == 0):
-    clf = DecisionTreeClassifier(max_depth=param) # Initialize the classifier
-    clf.fit(X_train, y_train) # Train the classifier
-    y_pred = clf.predict(X_test) # Make predictions on the test set
-    accuracy = accuracy_score(y_test, y_pred) # Calculate accuracy
+    clf = DecisionTreeClassifier(max_depth=param) #initialize the classifier
+    clf.fit(X_train, y_train) #train the classifier
+    y_pred = clf.predict(X_test) #make predictions on the test set
+    accuracy = accuracy_score(y_test, y_pred) #calculate accuracy
 
     #check for overfitting using the generalization gap
     y_train_pred = clf.predict(X_train)
@@ -62,10 +66,10 @@ old_param = param
 param = 1 #good starting point
 
 while(abs(train_accuracy - test_accuracy) > GG_THRESHOLD or param == 0):
-    rf = RandomForestClassifier(n_estimators=param,max_depth=old_param) # Initialize the classifier
-    rf.fit(X_train, y_train) # Train the classifier
-    y_pred = rf.predict(X_test) # Make predictions on the test set
-    accuracy = accuracy_score(y_test, y_pred) # Calculate accuracy
+    rf = RandomForestClassifier(n_estimators=param,max_depth=old_param) #initialize the classifier
+    rf.fit(X_train, y_train) #train the classifier
+    y_pred = rf.predict(X_test) #make predictions on the test set
+    accuracy = accuracy_score(y_test, y_pred) #calculate accuracy
 
     #check for overfitting using the generalization gap
     y_train_pred = rf.predict(X_train)
@@ -77,16 +81,16 @@ while(abs(train_accuracy - test_accuracy) > GG_THRESHOLD or param == 0):
 
 print(f"Best n_estimators: {param-1}\n")
 
-#Find best parameter: k
+#find best parameter: k
 train_accuracy = 1
 test_accuracy = 0
 param = 100 #good starting point
 
 while(abs(train_accuracy - test_accuracy) > GG_THRESHOLD or param == 100):
-    knn = KNeighborsClassifier(n_neighbors=param,metric='euclidean') # Initialize the classifier
-    knn.fit(X_train, y_train) # Train the classifier
-    y_pred = knn.predict(X_test) # Make predictions on the test set
-    accuracy = accuracy_score(y_test, y_pred) # Calculate accuracy
+    knn = KNeighborsClassifier(n_neighbors=param,metric='euclidean') #initialize the classifier
+    knn.fit(X_train, y_train) #train the classifier
+    y_pred = knn.predict(X_test) #make predictions on the test set
+    accuracy = accuracy_score(y_test, y_pred) #calculate accuracy
 
     #check for overfitting using the generalization gap
     y_train_pred = knn.predict(X_train)
