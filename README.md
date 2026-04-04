@@ -5,12 +5,11 @@ Note: Some models will be difficult to replicate due to the randomness involved.
 
 ## Table of Contents
 
-1. [Prediction-CODE](#prediction-code)  
-2. [Files](#files)  
-3. [Build Instructions](#build-instructions)  
-4. [Rational for Models](#rational-for-models)  
-5. [Suggested Future Work](#suggested-future-work)  
-6. [Sources](#sources)  
+1. [Files](#files)  
+2. [Build Instructions](#build-instructions)  
+3. [Rational for Models](#rational-for-models)  
+4. [Suggested Future Work](#suggested-future-work)  
+5. [Sources](#sources)  
 
 ## Files
 
