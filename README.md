@@ -28,6 +28,7 @@ Note: Some models will be difficult to replicate due to the randomness involved.
 | classify.py                         | Generates predictions_VUS.csv.                                |
 | poster.pdf                          | The poster used to present the project.                       |
 | poster.zip                          | The source for poster.pdf.                                    |
+| requirements.txt                    | File used to install required libraries.                      |
 
 ## Build Instructions
 
