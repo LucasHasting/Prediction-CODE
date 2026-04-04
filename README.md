@@ -1,6 +1,18 @@
 # Prediction-CODE
+For this project, we use machine learning models to predict pathogenicity associated with SERPINA1 (which is associated with AAT). The dataset comes from ensembl (P01009). We use "SIFT", "PolyPhen", "REVEL", "MetaLR", and "Mutation Assessor" to predict "Clin. Sig." (see clean_data.py).
 
 Note: Some models will be difficult to replicate due to the randomness involved. The models used are saved in the models folder.
+
+## Table of Contents
+
+1. [Prediction-CODE](#prediction-code)  
+2. [Files](#files)  
+3. [Build Instructions](#build-instructions)  
+4. [Rational for Models](#rational-for-models)  
+5. [Suggested Future Work](#suggested-future-work)  
+6. [Sources](#sources)  
+
+## Files
 
 | File                         | Description                                                          |
 |------------------------------|----------------------------------------------------------------------|
@@ -18,7 +30,11 @@ Note: Some models will be difficult to replicate due to the randomness involved.
 | poster.pdf                          | The poster used to present the project.                       |
 | poster.zip                          | The source for poster.pdf.                                    |
 
-## Rational for NN, Decision Tree/Random Forest, K-NN
+## Build Instructions
+
+WIP
+
+## Rational for Models
 Since we are using binary classification, a sigmoid activation function is used on the output layer.
 
 1 Hidden layer is used, there are few inputs, so additional layers are not needed.
@@ -33,10 +49,23 @@ Gini is used for the decision tree/random forest since we are using binary class
 
 Euclidean Distance is used for K-NN since all variables are normalized.
 
+## Suggested Future Work
+(1) Results from the decision tree/random forest can be used to make inferences on the various perdictors.
+
+(2) Additional predictors can be explored.
+
+(3) Additional layers/activation functions can be experimented within the MLP, and other types of neural networks could be explored.
+
+(4) The models can be tested on datasets associated with other genes/proteins.
+
+(5) New models can be trained on datasets associated with other genes/proteins.
+
+(6) Possibly combine (4) and (5) to create models that generalize to predicting pathogenicity, regardless of the gene/protein.
+
 ## Sources
 (1) https://builtin.com/machine-learning/common-loss-functions
 
-(2) https://www.deeplearningbook.org/contents/mlp.html
+(2) https://www.deeplearningbook.org/
 
 (3) https://mlbenchmarks.org/04-holdout-method.html 
 
