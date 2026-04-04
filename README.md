@@ -64,7 +64,7 @@ Euclidean Distance is used for K-NN since all variables are normalized.
 ## Sources
 (1) https://builtin.com/machine-learning/common-loss-functions
 
-(2) https://www.deeplearningbook.org/
+(2) https://www.deeplearningbook.org/ (chapters 5/6 are the most helpful)
 
 (3) https://mlbenchmarks.org/04-holdout-method.html 
 
