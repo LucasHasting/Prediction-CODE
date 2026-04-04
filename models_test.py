@@ -131,7 +131,7 @@ plt.show()
 print(f"\nDT Accuracy: {accuracy:.2f}")
 print()
 
-#test RM
+#test RF
 y_pred = rf.predict(X_test) # Make predictions on the test set
 accuracy = accuracy_score(y_test, y_pred) # Calculate accuracy
 
