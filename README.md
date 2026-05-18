@@ -51,7 +51,7 @@ Since we are using binary classification, a sigmoid activation function is used 
 
 The loss function used is log loss, this is done since we are doing binary classification.
 
-The neural network is trained using backpropagation and optomized using stocastic gradient descent.
+The neural network is trained using backpropagation and optimized using stocastic gradient descent.
 
 Anything else with the NN was chosen through experimentation.
 
