@@ -40,6 +40,7 @@ pip install scikit-learn
 pip install torch
 pip install pandas
 pip install matplotlib
+pip install openpyxl
 ```
 
 Now you can use python from the command line or open/execute each program using the IDE idle.
