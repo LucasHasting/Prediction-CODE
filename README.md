@@ -28,11 +28,21 @@ Note: Some models will be difficult to replicate due to the randomness involved.
 | classify.py                         | Generates predictions_VUS.csv.                                |
 | poster.pdf                          | The poster used to present the project.                       |
 | poster.zip                          | The source for poster.pdf.                                    |
-| requirements.txt                    | File used to install required libraries.                      |
 
 ## Build Instructions
 
-WIP
+First, ensure python is installed, it can be installed [here](https://www.python.org/downloads/) and, optionally, that git is installed, it can be installed [here](https://git-scm.com/install/). When you install python, make sure to add the installation to the PAtH environment variable. In the event that you did not do that, follow the instructions [here](https://phoenixnap.com/kb/linux-add-to-path) for Linux and [here](https://www.youtube.com/watch?v=9umV9jD6n80&feature=youtu.be) for Windows.
+
+Next, use pip to install the following packages:
+
+```sh
+pip install scikit-learn
+pip install torch
+pip install pandas
+pip install matplotlib
+```
+
+Now you can use python from the command line or open/execute each program using the IDE idle.
 
 ## Rational for Models
 Since we are using binary classification, a sigmoid activation function is used on the output layer.
