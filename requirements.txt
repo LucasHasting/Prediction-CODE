@@ -1,4 +1,0 @@
-torch
-pandas
-matplotlib
-scikit-learn
