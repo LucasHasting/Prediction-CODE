@@ -59,7 +59,7 @@ file.close()
 #make predictions
 df["NN"] = torch.round(nn_model(torch.tensor(X.values, dtype=torch.float32))).detach().numpy()
 df["DT"] = dt.predict(X)
-df["RM"] = rf.predict(X)
+df["RF"] = rf.predict(X)
 df["KNN"] = knn.predict(X)
 
 #store updated VUS file with predictions
